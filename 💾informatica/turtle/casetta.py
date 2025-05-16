@@ -1,11 +1,10 @@
 from turtle import Screen, Turtle, done
-
 # Setup
 W, H = 800, 600
 s = Screen(); s.setup(W, H)
 s.bgcolor("skyblue")
 t = Turtle(visible=False)
-t.speed(0) 
+t.speed(0)
 t.penup()
 
 # Helpers
@@ -21,7 +20,7 @@ def P(x,y,n,l,co,fi,hd=0):
     t.color(co,fi)
     t.begin_fill()
     t.pendown()
-    for _ in range(n): 
+    for _ in range(n):
         t.forward(l)
         t.left(360/n)
     t.end_fill()
@@ -31,7 +30,7 @@ o = -100
 sz = 170
 
 # Sole
-t.C = C; C(-320,225,35,"yellow")
+t = C; C(-320,225,35,"yellow")
 # Casa
 P(o,-100,4,sz,"chocolate","orange")
 
@@ -54,7 +53,7 @@ t.setheading(0)
 t.color("black","red")
 t.begin_fill()
 t.pendown()
-for _ in range(2): 
+for _ in range(2):
     t.forward(50)
     t.left(90)
     t.forward(80)
