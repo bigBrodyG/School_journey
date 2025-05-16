@@ -70,34 +70,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-'''
-import random
-import tkinter as tk
-
-def generate_random_color() -> str:
-    return f'#{random.randint(0, 0xFFFFFF):06x}'
-
-def draw_square(canvas: tk.Canvas, x: int, y: int, size: int, color: str) -> None:
-    canvas.create_rectangle(x, y, x + size, y + size, fill=color, outline="")
-
-def main() -> None:
-    num_squares = int(input("Inserisci il numero di quadrati da disegnare: "))
-    
-    root = tk.Tk()
-    canvas = tk.Canvas(root, width=800, height=600, bg='white')
-    canvas.pack()
-    
-    for _ in range(num_squares):
-        x = random.randint(0, 800)
-        y = random.randint(0, 600)
-        size = random.randint(20, 100)
-        color = generate_random_color()
-        draw_square(canvas, x, y, size, color)
-    
-    root.mainloop()
-
-if __name__ == "__main__":
-    main()
-'''
