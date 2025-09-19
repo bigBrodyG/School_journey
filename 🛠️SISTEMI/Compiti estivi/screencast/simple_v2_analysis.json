@@ -1,0 +1,848 @@
+{
+  "sections": [],
+  "symbols": [
+    {
+      "name": "_init",
+      "addr": 4198400,
+      "type": "T",
+      "size": 0
+    },
+    {
+      "name": "_start",
+      "addr": 4198576,
+      "type": "T",
+      "size": 56
+    },
+    {
+      "name": "_dl_relocate_static_pie",
+      "addr": 4198624,
+      "type": "T"
+    },
+    {
+      "name": "add_cc",
+      "addr": 4198806,
+      "type": "T",
+      "size": 577
+    },
+    {
+      "name": "printrub",
+      "addr": 4199047,
+      "type": "T",
+      "size": 256
+    },
+    {
+      "name": "memoryLayout",
+      "addr": 4199147,
+      "type": "T",
+      "size": 664
+    },
+    {
+      "name": "main",
+      "addr": 4199445,
+      "type": "T",
+      "size": 612
+    },
+    {
+      "name": "_fini",
+      "addr": 4199712,
+      "type": "T",
+      "size": 0
+    },
+    {
+      "name": "_IO_stdin_used",
+      "addr": 4202496,
+      "type": "R",
+      "size": 4
+    },
+    {
+      "name": "__GNU_EH_FRAME_HDR",
+      "addr": 4202892,
+      "type": "r",
+      "size": 0
+    },
+    {
+      "name": "_DYNAMIC",
+      "addr": 4210168,
+      "type": "d",
+      "size": 0
+    },
+    {
+      "name": "_GLOBAL_OFFSET_TABLE_",
+      "addr": 4210664,
+      "type": "d",
+      "size": 0
+    },
+    {
+      "name": "__data_start",
+      "addr": 4210752,
+      "type": "D",
+      "size": 0
+    },
+    {
+      "name": "data_start",
+      "addr": 4210752,
+      "type": "W",
+      "size": 0
+    },
+    {
+      "name": "__dso_handle",
+      "addr": 4210760,
+      "type": "D",
+      "size": 0
+    },
+    {
+      "name": "exename",
+      "addr": 4210768,
+      "type": "D",
+      "size": 8
+    },
+    {
+      "name": "_edata",
+      "addr": 4210776,
+      "type": "D",
+      "size": 0
+    },
+    {
+      "name": "__TMC_END__",
+      "addr": 4210776,
+      "type": "D",
+      "size": 0
+    },
+    {
+      "name": "__bss_start",
+      "addr": 4210784,
+      "type": "B",
+      "size": 0
+    },
+    {
+      "name": "tot_cc",
+      "addr": 4210816,
+      "type": "B",
+      "size": 4
+    },
+    {
+      "name": "rubr_dyn",
+      "addr": 4210848,
+      "type": "B",
+      "size": 2048
+    },
+    {
+      "name": "_end",
+      "addr": 4211648,
+      "type": "B",
+      "size": 0
+    },
+    {
+      "name": "_dl_relocate_sta[...]",
+      "addr": 4198624,
+      "size": 5,
+      "type": "?"
+    }
+  ],
+  "runtime": {
+    "memoryLayout": 4199147,
+    "exename_addr": 4202504,
+    "exename_val": "Rubrica Telefonica",
+    "tot_cc_addr": 4210816,
+    "tot_cc_val": 3,
+    "rubr_dyn_slot": 4210848,
+    "rubr_dyn0_val": 4219680,
+    "stack_local_var": 140737488347924,
+    "heap_rubr_dyn0": 4219680,
+    "heap_rubr_dyn0_val": "Mario - 3331234567"
+  },
+  "gdb_excerpt": [
+    "$1 = 0x7fffffffe270",
+    "$2 = 0x7fffffffe260",
+    "$3 = 0x4012f3",
+    "0x7fffffffe270:\t0x00007fffffffe2d0\t0x00000000004014ca",
+    "0x7fffffffe280:\t0x0000008e00000006\t0x0000000000000003",
+    "0x7fffffffe290:\t0x000000000040215b\t0x0000000000402161",
+    "0x7fffffffe2a0:\t0x0000000000402166\t0x0000000000000000",
+    "0x7fffffffe2b0:\t0x000000000040216b\t0x0000000000402176",
+    "0x7fffffffe2c0:\t0x0000000000402181\t0xb33482d73be66100",
+    "0x7fffffffe2d0:\t0x00007fffffffe370\t0x00007ffff7c27675",
+    "0x7fffffffe2e0:\t0x00007ffff7fc2000\t0x00007fffffffe3f8",
+    "0x7fffffffe2f0:\t0x00000001ffffe330\t0x0000000000401415",
+    "0x7fffffffe300:\t0x0000000000000000\t0x517114dc26ff3eae",
+    "0x7fffffffe310:\t0x00007fffffffe3f8\t0x0000000000000001",
+    "0x7fffffffe320:\t0x00007ffff7ffd000\t0x0000000000403df0",
+    "0x7fffffffe330:\t0x517114dc25df3eae\t0x517104a70c413eae",
+    "0x7fffffffe340:\t0x00007fff00000000\t0x0000000000000000",
+    "0x7fffffffe350:\t0x0000000000000000\t0x0000000000000000",
+    "0x7fffffffe360:\t0x00007fffffffe3f8\t0xb33482d73be66100",
+    "0x7fffffffe370:\t0x00007fffffffe3d0\t0x00007ffff7c27729",
+    "0x7fffffffe380:\t0x00007fffffffe408\t0x0000000000403df0",
+    "0x7fffffffe390:\t0x0000000000401415\t0x00007fffffffe408",
+    "0x7fffffffe3a0:\t0x0000000000000000\t0x0000000000000000",
+    "0x7fffffffe3b0:\t0x00000000004010b0\t0x00007fffffffe3f0",
+    "0x7fffffffe3c0:\t0x0000000000000000\t0x0000000000000000",
+    "0x7fffffffe3d0:\t0x0000000000000000\t0x00000000004010d5",
+    "0x7fffffffe3e0:\t0x00007fffffffe3e8\t0x0000000000000038",
+    "0x7fffffffe3f0:\t0x0000000000000001\t0x00007fffffffe775",
+    "0x7fffffffe400:\t0x0000000000000000\t0x00007fffffffe7d2",
+    "0x7fffffffe410:\t0x00007fffffffe7e6\t0x00007fffffffe7fa",
+    "0x7fffffffe420:\t0x00007fffffffe810\t0x00007fffffffe824",
+    "0x7fffffffe430:\t0x00007fffffffe83c\t0x00007fffffffe850",
+    "0x7fffffffe440:\t0x00007fffffffe88e\t0x00007fffffffe8a1",
+    "0x7fffffffe450:\t0x00007fffffffe8d4\t0x00007fffffffe988",
+    "0x7fffffffe460:\t0x00007fffffffe99c\t0x00007fffffffe9b1",
+    "0x7fffffffe260:\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe268:\t0x00\t0x61\t0xe6\t0x3b\t0x03\t0x00\t0x00\t0x00",
+    "0x7fffffffe270:\t0xd0\t0xe2\t0xff\t0xff\t0xff\t0x7f\t0x00\t0x00",
+    "0x7fffffffe278:\t0xca\t0x14\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe280:\t0x06\t0x00\t0x00\t0x00\t0x8e\t0x00\t0x00\t0x00",
+    "0x7fffffffe288:\t0x03\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe290:\t0x5b\t0x21\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe298:\t0x61\t0x21\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe2a0:\t0x66\t0x21\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe2a8:\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe2b0:\t0x6b\t0x21\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe2b8:\t0x76\t0x21\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe2c0:\t0x81\t0x21\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe2c8:\t0x00\t0x61\t0xe6\t0x3b\t0xd7\t0x82\t0x34\t0xb3",
+    "0x7fffffffe2d0:\t0x70\t0xe3\t0xff\t0xff\t0xff\t0x7f\t0x00\t0x00",
+    "0x7fffffffe2d8:\t0x75\t0x76\t0xc2\t0xf7\t0xff\t0x7f\t0x00\t0x00",
+    "0x7fffffffe2e0:\t0x00\t0x20\t0xfc\t0xf7\t0xff\t0x7f\t0x00\t0x00",
+    "0x7fffffffe2e8:\t0xf8\t0xe3\t0xff\t0xff\t0xff\t0x7f\t0x00\t0x00",
+    "0x7fffffffe2f0:\t0x30\t0xe3\t0xff\t0xff\t0x01\t0x00\t0x00\t0x00",
+    "0x7fffffffe2f8:\t0x15\t0x14\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe300:\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe308:\t0xae\t0x3e\t0xff\t0x26\t0xdc\t0x14\t0x71\t0x51",
+    "0x7fffffffe310:\t0xf8\t0xe3\t0xff\t0xff\t0xff\t0x7f\t0x00\t0x00",
+    "0x7fffffffe318:\t0x01\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe320:\t0x00\t0xd0\t0xff\t0xf7\t0xff\t0x7f\t0x00\t0x00",
+    "0x7fffffffe328:\t0xf0\t0x3d\t0x40\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe330:\t0xae\t0x3e\t0xdf\t0x25\t0xdc\t0x14\t0x71\t0x51",
+    "0x7fffffffe338:\t0xae\t0x3e\t0x41\t0x0c\t0xa7\t0x04\t0x71\t0x51",
+    "0x7fffffffe340:\t0x00\t0x00\t0x00\t0x00\t0xff\t0x7f\t0x00\t0x00",
+    "0x7fffffffe348:\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe350:\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "0x7fffffffe358:\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00\t0x00",
+    "$4 = (const char **) 0x404050 <exename>",
+    "$5 = 0x402008 \"Rubrica Telefonica\"",
+    "$8 = (char *(*)[100]) 0x4040a0 <rubr_dyn>",
+    "0x4040a0 <rubr_dyn>:\t0x0000000000406320\t0x0000000000406340",
+    "0x4040b0 <rubr_dyn+16>:\t0x0000000000406360\t0x0000000000000000",
+    "0x4040c0 <rubr_dyn+32>:\t0x0000000000000000\t0x0000000000000000",
+    "0x4040d0 <rubr_dyn+48>:\t0x0000000000000000\t0x0000000000000000",
+    "0x4040e0 <rubr_dyn+64>:\t0x0000000000000000\t0x0000000000000000",
+    "0x4040f0 <rubr_dyn+80>:\t0x0000000000000000\t0x0000000000000000",
+    "0x404100 <rubr_dyn+96>:\t0x0000000000000000\t0x0000000000000000",
+    "0x404110 <rubr_dyn+112>:\t0x0000000000000000\t0x0000000000000000",
+    "=== strings at rubr_dyn[0..4] ===",
+    "$9 = 0x406320 \"Mario - 3331234567\"",
+    "$10 = 0x406340 \"Anna - 3209876543\"",
+    "$11 = 0x406360 \"Luca - 3485554433\"",
+    "$12 = 0x0",
+    "$13 = 0x0",
+    "rubr_dyn[0] -> Mario - 3331234567",
+    "rubr_dyn[1] -> Anna - 3209876543",
+    "rubr_dyn[2] -> Luca - 3485554433",
+    ".rodata exename (stringa): 0x402008 -> Rubrica Telefonica",
+    ".bss    rubr_dyn[0] (slot): 0x4040a0 -> 0x406320",
+    "heap  rubr_dyn[0]: 0x406320 -> Mario - 3331234567"
+  ],
+  "rodata_strings": [
+    {
+      "offset": 0,
+      "ascii": "........Rubrica "
+    },
+    {
+      "offset": 16,
+      "ascii": "Telefonica.%s - "
+    },
+    {
+      "offset": 32,
+      "ascii": "%s..--- Rubrica "
+    },
+    {
+      "offset": 48,
+      "ascii": "---.rubr_dyn[%d]"
+    },
+    {
+      "offset": 64,
+      "ascii": " -> %s...--- Mem"
+    },
+    {
+      "offset": 80,
+      "ascii": "ory Layout ---.."
+    },
+    {
+      "offset": 96,
+      "ascii": ".text  funzione "
+    },
+    {
+      "offset": 112,
+      "ascii": "memoryLayout: %p"
+    },
+    {
+      "offset": 128,
+      "ascii": ".........rodata "
+    },
+    {
+      "offset": 144,
+      "ascii": "exename (stringa"
+    },
+    {
+      "offset": 160,
+      "ascii": "): %p -> %s...da"
+    },
+    {
+      "offset": 176,
+      "ascii": "ta   &tot_cc: %p"
+    },
+    {
+      "offset": 192,
+      "ascii": " -> %d...bss    "
+    },
+    {
+      "offset": 208,
+      "ascii": "rubr_dyn[0] (slo"
+    },
+    {
+      "offset": 224,
+      "ascii": "t): %p -> %p..st"
+    },
+    {
+      "offset": 240,
+      "ascii": "ack  &local_var:"
+    },
+    {
+      "offset": 256,
+      "ascii": " %p..heap  rubr_"
+    },
+    {
+      "offset": 272,
+      "ascii": "dyn[0]: %p -> %s"
+    },
+    {
+      "offset": 288,
+      "ascii": "........heap  ru"
+    },
+    {
+      "offset": 304,
+      "ascii": "br_dyn[0]: non a"
+    },
+    {
+      "offset": 320,
+      "ascii": "ncora allocato.."
+    },
+    {
+      "offset": 336,
+      "ascii": "... %s ....Mario"
+    },
+    {
+      "offset": 352,
+      "ascii": ".Anna.Luca.33312"
+    }
+  ],
+  "rubr_dyn_slots": [
+    {
+      "index": 0,
+      "slot_addr": 4210848,
+      "value": null
+    },
+    {
+      "index": 1,
+      "slot_addr": 4210856,
+      "value": null
+    },
+    {
+      "index": 2,
+      "slot_addr": 4210864,
+      "value": null
+    },
+    {
+      "index": 3,
+      "slot_addr": 4210872,
+      "value": null
+    },
+    {
+      "index": 4,
+      "slot_addr": 4210880,
+      "value": null
+    },
+    {
+      "index": 5,
+      "slot_addr": 4210888,
+      "value": null
+    },
+    {
+      "index": 6,
+      "slot_addr": 4210896,
+      "value": null
+    },
+    {
+      "index": 7,
+      "slot_addr": 4210904,
+      "value": null
+    },
+    {
+      "index": 8,
+      "slot_addr": 4210912,
+      "value": null
+    },
+    {
+      "index": 9,
+      "slot_addr": 4210920,
+      "value": null
+    },
+    {
+      "index": 10,
+      "slot_addr": 4210928,
+      "value": null
+    },
+    {
+      "index": 11,
+      "slot_addr": 4210936,
+      "value": null
+    },
+    {
+      "index": 12,
+      "slot_addr": 4210944,
+      "value": null
+    },
+    {
+      "index": 13,
+      "slot_addr": 4210952,
+      "value": null
+    },
+    {
+      "index": 14,
+      "slot_addr": 4210960,
+      "value": null
+    },
+    {
+      "index": 15,
+      "slot_addr": 4210968,
+      "value": null
+    },
+    {
+      "index": 16,
+      "slot_addr": 4210976,
+      "value": null
+    },
+    {
+      "index": 17,
+      "slot_addr": 4210984,
+      "value": null
+    },
+    {
+      "index": 18,
+      "slot_addr": 4210992,
+      "value": null
+    },
+    {
+      "index": 19,
+      "slot_addr": 4211000,
+      "value": null
+    },
+    {
+      "index": 20,
+      "slot_addr": 4211008,
+      "value": null
+    },
+    {
+      "index": 21,
+      "slot_addr": 4211016,
+      "value": null
+    },
+    {
+      "index": 22,
+      "slot_addr": 4211024,
+      "value": null
+    },
+    {
+      "index": 23,
+      "slot_addr": 4211032,
+      "value": null
+    },
+    {
+      "index": 24,
+      "slot_addr": 4211040,
+      "value": null
+    },
+    {
+      "index": 25,
+      "slot_addr": 4211048,
+      "value": null
+    },
+    {
+      "index": 26,
+      "slot_addr": 4211056,
+      "value": null
+    },
+    {
+      "index": 27,
+      "slot_addr": 4211064,
+      "value": null
+    },
+    {
+      "index": 28,
+      "slot_addr": 4211072,
+      "value": null
+    },
+    {
+      "index": 29,
+      "slot_addr": 4211080,
+      "value": null
+    },
+    {
+      "index": 30,
+      "slot_addr": 4211088,
+      "value": null
+    },
+    {
+      "index": 31,
+      "slot_addr": 4211096,
+      "value": null
+    },
+    {
+      "index": 32,
+      "slot_addr": 4211104,
+      "value": null
+    },
+    {
+      "index": 33,
+      "slot_addr": 4211112,
+      "value": null
+    },
+    {
+      "index": 34,
+      "slot_addr": 4211120,
+      "value": null
+    },
+    {
+      "index": 35,
+      "slot_addr": 4211128,
+      "value": null
+    },
+    {
+      "index": 36,
+      "slot_addr": 4211136,
+      "value": null
+    },
+    {
+      "index": 37,
+      "slot_addr": 4211144,
+      "value": null
+    },
+    {
+      "index": 38,
+      "slot_addr": 4211152,
+      "value": null
+    },
+    {
+      "index": 39,
+      "slot_addr": 4211160,
+      "value": null
+    },
+    {
+      "index": 40,
+      "slot_addr": 4211168,
+      "value": null
+    },
+    {
+      "index": 41,
+      "slot_addr": 4211176,
+      "value": null
+    },
+    {
+      "index": 42,
+      "slot_addr": 4211184,
+      "value": null
+    },
+    {
+      "index": 43,
+      "slot_addr": 4211192,
+      "value": null
+    },
+    {
+      "index": 44,
+      "slot_addr": 4211200,
+      "value": null
+    },
+    {
+      "index": 45,
+      "slot_addr": 4211208,
+      "value": null
+    },
+    {
+      "index": 46,
+      "slot_addr": 4211216,
+      "value": null
+    },
+    {
+      "index": 47,
+      "slot_addr": 4211224,
+      "value": null
+    },
+    {
+      "index": 48,
+      "slot_addr": 4211232,
+      "value": null
+    },
+    {
+      "index": 49,
+      "slot_addr": 4211240,
+      "value": null
+    },
+    {
+      "index": 50,
+      "slot_addr": 4211248,
+      "value": null
+    },
+    {
+      "index": 51,
+      "slot_addr": 4211256,
+      "value": null
+    },
+    {
+      "index": 52,
+      "slot_addr": 4211264,
+      "value": null
+    },
+    {
+      "index": 53,
+      "slot_addr": 4211272,
+      "value": null
+    },
+    {
+      "index": 54,
+      "slot_addr": 4211280,
+      "value": null
+    },
+    {
+      "index": 55,
+      "slot_addr": 4211288,
+      "value": null
+    },
+    {
+      "index": 56,
+      "slot_addr": 4211296,
+      "value": null
+    },
+    {
+      "index": 57,
+      "slot_addr": 4211304,
+      "value": null
+    },
+    {
+      "index": 58,
+      "slot_addr": 4211312,
+      "value": null
+    },
+    {
+      "index": 59,
+      "slot_addr": 4211320,
+      "value": null
+    },
+    {
+      "index": 60,
+      "slot_addr": 4211328,
+      "value": null
+    },
+    {
+      "index": 61,
+      "slot_addr": 4211336,
+      "value": null
+    },
+    {
+      "index": 62,
+      "slot_addr": 4211344,
+      "value": null
+    },
+    {
+      "index": 63,
+      "slot_addr": 4211352,
+      "value": null
+    },
+    {
+      "index": 64,
+      "slot_addr": 4211360,
+      "value": null
+    },
+    {
+      "index": 65,
+      "slot_addr": 4211368,
+      "value": null
+    },
+    {
+      "index": 66,
+      "slot_addr": 4211376,
+      "value": null
+    },
+    {
+      "index": 67,
+      "slot_addr": 4211384,
+      "value": null
+    },
+    {
+      "index": 68,
+      "slot_addr": 4211392,
+      "value": null
+    },
+    {
+      "index": 69,
+      "slot_addr": 4211400,
+      "value": null
+    },
+    {
+      "index": 70,
+      "slot_addr": 4211408,
+      "value": null
+    },
+    {
+      "index": 71,
+      "slot_addr": 4211416,
+      "value": null
+    },
+    {
+      "index": 72,
+      "slot_addr": 4211424,
+      "value": null
+    },
+    {
+      "index": 73,
+      "slot_addr": 4211432,
+      "value": null
+    },
+    {
+      "index": 74,
+      "slot_addr": 4211440,
+      "value": null
+    },
+    {
+      "index": 75,
+      "slot_addr": 4211448,
+      "value": null
+    },
+    {
+      "index": 76,
+      "slot_addr": 4211456,
+      "value": null
+    },
+    {
+      "index": 77,
+      "slot_addr": 4211464,
+      "value": null
+    },
+    {
+      "index": 78,
+      "slot_addr": 4211472,
+      "value": null
+    },
+    {
+      "index": 79,
+      "slot_addr": 4211480,
+      "value": null
+    },
+    {
+      "index": 80,
+      "slot_addr": 4211488,
+      "value": null
+    },
+    {
+      "index": 81,
+      "slot_addr": 4211496,
+      "value": null
+    },
+    {
+      "index": 82,
+      "slot_addr": 4211504,
+      "value": null
+    },
+    {
+      "index": 83,
+      "slot_addr": 4211512,
+      "value": null
+    },
+    {
+      "index": 84,
+      "slot_addr": 4211520,
+      "value": null
+    },
+    {
+      "index": 85,
+      "slot_addr": 4211528,
+      "value": null
+    },
+    {
+      "index": 86,
+      "slot_addr": 4211536,
+      "value": null
+    },
+    {
+      "index": 87,
+      "slot_addr": 4211544,
+      "value": null
+    },
+    {
+      "index": 88,
+      "slot_addr": 4211552,
+      "value": null
+    },
+    {
+      "index": 89,
+      "slot_addr": 4211560,
+      "value": null
+    },
+    {
+      "index": 90,
+      "slot_addr": 4211568,
+      "value": null
+    },
+    {
+      "index": 91,
+      "slot_addr": 4211576,
+      "value": null
+    },
+    {
+      "index": 92,
+      "slot_addr": 4211584,
+      "value": null
+    },
+    {
+      "index": 93,
+      "slot_addr": 4211592,
+      "value": null
+    },
+    {
+      "index": 94,
+      "slot_addr": 4211600,
+      "value": null
+    },
+    {
+      "index": 95,
+      "slot_addr": 4211608,
+      "value": null
+    },
+    {
+      "index": 96,
+      "slot_addr": 4211616,
+      "value": null
+    },
+    {
+      "index": 97,
+      "slot_addr": 4211624,
+      "value": null
+    },
+    {
+      "index": 98,
+      "slot_addr": 4211632,
+      "value": null
+    },
+    {
+      "index": 99,
+      "slot_addr": 4211640,
+      "value": null
+    }
+  ],
+  "heap_addrs": [
+    {
+      "addr": 4219680,
+      "val": "Mario - 3331234567"
+    }
+  ]
+}

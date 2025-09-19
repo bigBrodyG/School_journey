@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build-es4",
+			"type": "shell",
+			"command": "gcc",
+			"args": [
+				"-Wall",
+				"-Wextra",
+				"-std=c11",
+				"-O2",
+				"ES_4/Esercizio_04.c",
+				"-o",
+				"ES_4/linux_main"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}

@@ -1,0 +1,30 @@
+set pagination off
+set confirm off
+break memoryLayout
+run
+# print registers of interest
+p/x $rbp
+p/x $rsp
+p/x $rip
+# dump 64 qwords from rbp (to inspect saved rbp, retaddr, locals)
+x/64gx $rbp
+# dump 256 bytes starting at rsp (stack area)
+x/256bx $rsp
+# print addresses of key globals (use symbol names)
+p &exename
+p exename
+p &tot_cc
+p tot_cc
+p &rubr_dyn
+# dump first 16 pointers of rubr_dyn array (8 bytes each)
+x/16gx &rubr_dyn
+# attempt to read strings pointed by first 5 rubr_dyn slots
+printf "=== strings at rubr_dyn[0..4] ===\n"
+p rubr_dyn[0]
+p rubr_dyn[1]
+p rubr_dyn[2]
+p rubr_dyn[3]
+p rubr_dyn[4]
+# continue and quit
+continue
+quit
