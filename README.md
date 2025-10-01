@@ -1,5 +1,3 @@
-
-
 # 📚 School Repository  
 ![GitHub Repo stars](https://img.shields.io/github/stars/bigBrodyG/School_journey?style=social)
 [![Visits Badge](https://badges.pufler.dev/visits/bigBrodyG/School_journey)](https://badges.pufler.dev)
@@ -59,3 +57,16 @@ Se sei curioso, dai un'occhiata! 😃
     <img src="https://forthebadge.com/images/badges/contains-17-coffee-cups.svg" height="40">
     <img src="https://forthebadge.com/images/badges/license-mit.svg" height="40">
 </a>
+
+# School_journey
+
+## Landing page (branch `site`)
+
+Questo branch è pubblicato su https://tdp.giordii.dev e ora include una pagina di benvenuto all root (`/index.html`) con link ai progetti.
+
+- Per aggiungere un nuovo progetto: modifica la costante `PROJECTS` in `index.html` (chiave `key`, `title`, `desc`, `href`).
+- Redirect rapido: puoi navigare direttamente con parametri
+  - `?p=verifica` reindirizza alla voce con `key="verifica"`
+  - `?to=/percorso/pagina.html` reindirizza a un URL della stessa origine
+
+C'è anche un `404.html` che reindirizza automaticamente alla home mantenendo eventuali parametri di query utili.

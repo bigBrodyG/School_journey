@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagina non trovata • tdp.giordii.dev</title>
+  <meta http-equiv="refresh" content="2; url=/" />
+  <style>
+    body { margin:0; display:grid; place-items:center; min-height:100dvh; background:#0b1220; color:#e6edf3; font: 500 16px/1.5 system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial;}
+    .box{ text-align:center; padding:24px }
+    a{ color:#5cc8ff }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>404</h1>
+    <p>Ops, pagina non trovata. Ti reindirizzo alla home…</p>
+    <p><a href="/">Vai alla home</a></p>
+  </div>
+  <script>
+    // Se qualcuno ha passato ?p= o ?to=, riprova sulla home
+    const qs = location.search || '';
+    const target = '/' + (qs || '');
+    setTimeout(() => { location.replace(target); }, 250);
+  </script>
+</body>
+</html>

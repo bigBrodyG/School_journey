@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Raccolta progetti scolastici su tdp.giordii.dev" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Raccolta Progetti | tdp.giordii.dev</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>📚</text></svg>">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #0e172a;
+      --card: #121a2a;
+      --text: #e6edf3;
+      --muted: #9fb2c8;
+      --brand: #5cc8ff;
+      --brand-2: #8fffcc;
+      --chip: rgba(255,255,255,.08);
+      --chip-b: rgba(255,255,255,.14);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; background:
+      radial-gradient(1200px 800px at 10% -10%, rgba(92,200,255,.15), transparent 60%),
+      radial-gradient(1000px 700px at 110% 10%, rgba(143,255,204,.12), transparent 60%),
+      var(--bg); color: var(--text);
+      font: 500 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 20px 64px; }
+
+    header { position: sticky; top: 0; z-index: 20; background: linear-gradient(180deg, rgba(11,18,32,.96), rgba(11,18,32,.75) 80%, rgba(11,18,32,0)); backdrop-filter: saturate(120%) blur(6px); margin: -32px -20px 12px; padding: 20px; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .head-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; }
+    h1 { font-size: 28px; margin: 0; letter-spacing: .3px; }
+    .sub { color: var(--muted); font-size: 15px; }
+
+    /* Slider */
+    .hero { position: relative; margin-top: 14px; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: var(--panel); box-shadow: var(--shadow); }
+    .slides { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: 100%; transition: transform .5s ease; }
+    .slide { position: relative; height: clamp(180px, 28vw, 340px); }
+    .slide img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05); }
+    .slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 75%); }
+    .caption { position: absolute; left: 16px; right: 16px; bottom: 14px; display: grid; gap: 6px; z-index: 2; }
+    .caption .t { font-weight: 800; font-size: clamp(16px, 2.2vw, 22px); text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+    .caption .d { font-size: 13px; color: #d7e3ee; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+    .hero .btn { justify-self: start; padding: 8px 12px; border-radius: 10px; background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.18); color: #e7f0f8; font-size: 13px; }
+    .ctrl { position: absolute; inset: 0; display: flex; justify-content: space-between; align-items: center; pointer-events: none; }
+    .ctrl button { pointer-events: auto; appearance: none; border: 0; background: rgba(0,0,0,.35); color: #e7f0f8; width: 36px; height: 36px; border-radius: 50%; margin: 0 8px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.15); }
+    .dots { position: absolute; left: 0; right: 0; bottom: 6px; display: flex; gap: 6px; justify-content: center; z-index: 2; }
+    .dots button { width: 8px; height: 8px; border-radius: 50%; border: 1px solid rgba(255,255,255,.5); background: rgba(255,255,255,.3); }
+    .dots button.active { background: #fff; }
+
+    .controls { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 14px; }
+    @media (min-width: 900px) { .controls { grid-template-columns: 1fr auto auto; align-items: center; } }
+
+    .search { display: flex; gap: 10px; align-items: center; background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 999px; padding: 10px 14px; }
+    .search input { flex: 1; outline: none; border: 0; background: transparent; color: var(--text); font-size: 15px; }
+    .search .kbd { font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,.12); border-radius: 6px; padding: 3px 6px; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 7px 12px; border-radius: 999px; border: 1px solid var(--chip-b); background: var(--chip); color: var(--muted); cursor: pointer; font-size: 13px; transition: all .15s ease; user-select: none; }
+    .chip:hover { border-color: rgba(92,200,255,.4); color: var(--text); }
+    .chip.active { background: linear-gradient(180deg, rgba(92,200,255,.25), rgba(92,200,255,.12)); color: var(--text); border-color: rgba(92,200,255,.6); }
+
+    .view { display: inline-flex; gap: 6px; padding: 4px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); }
+    .view button { appearance: none; border: 0; background: transparent; color: var(--muted); padding: 7px 12px; border-radius: 999px; cursor: pointer; font-size: 13px; }
+    .view button.active { color: var(--text); background: rgba(92,200,255,.18); border: 1px solid rgba(92,200,255,.35); }
+
+    main { padding-top: 8px; }
+    .grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 16px; }
+    @media (min-width: 560px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 980px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    .card { position: relative; background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+    .card:hover { transform: translateY(-2px); border-color: rgba(92,200,255,.35); box-shadow: 0 12px 36px rgba(20,30,60,.45); }
+
+    .thumb { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05); transition: transform .5s ease; }
+    .card:hover .thumb img { transform: scale(1.04); }
+    .thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.42) 75%); pointer-events: none; }
+
+    .meta { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 14px 12px; display: grid; gap: 6px; }
+    .title { font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+    .desc { font-size: 13px; color: #d7e3ee; opacity: .9; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+
+    .taglist { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+    .tag { font-size: 11px; padding: 4px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.25); color: #e7f0f8; backdrop-filter: blur(2px); }
+
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); background: rgba(0,0,0,.3); font-size: 12px; color: var(--muted); }
+
+    .empty { color: var(--muted); text-align: center; padding: 24px; border: 1px dashed rgba(255,255,255,.15); border-radius: var(--radius); background: rgba(255,255,255,.03); margin-top: 8px; }
+
+    /* Lists for calendar and school-year */
+    .group { margin: 10px 0 18px; }
+    .group h3 { margin: 12px 6px; font-size: 16px; color: #d7e3ee; }
+    .list { display: grid; gap: 10px; }
+    .row { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.04); }
+    .row .date { font-variant-numeric: tabular-nums; color: #cfe0ee; font-size: 13px; }
+    .row .name { font-weight: 600; }
+    .row .tags { display: flex; gap: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="head-row">
+        <div>
+          <h1>Raccolta Progetti</h1>
+          <div class="sub">Sfoglia, filtra o cerca i progetti. Scorciatoie: ?p=chiave oppure ?to=percorso</div>
+        </div>
+        <span class="badge"><span style="width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#5cc8ff,#8fffcc);box-shadow:0 0 16px rgba(92,200,255,.6);display:inline-block"></span> Online</span>
+      </div>
+
+      <!-- Hero slider dei progetti in evidenza -->
+      <section class="hero" aria-label="Progetti in evidenza">
+        <div class="slides" id="slides" style="transform:translateX(0)"></div>
+        <div class="ctrl">
+          <button id="prev" aria-label="Slide precedente">‹</button>
+          <button id="next" aria-label="Slide successiva">›</button>
+        </div>
+        <div class="dots" id="dots"></div>
+      </section>
+
+      <div class="controls">
+        <label class="search" aria-label="Cerca progetti">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 21l-4.3-4.3" stroke="#9fb2c8" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="#9fb2c8" stroke-width="2"/></svg>
+          <input id="q" type="search" placeholder="Cerca per titolo/descrizione/tag" autocomplete="off" />
+          <span class="kbd">/</span>
+        </label>
+        <nav class="filters" id="filters" aria-label="Filtri per tag"></nav>
+        <div class="view" id="viewSwitcher" role="tablist" aria-label="Modalità di visualizzazione">
+          <button role="tab" data-view="grid" class="active" aria-selected="true">Griglia</button>
+          <button role="tab" data-view="calendar" aria-selected="false">Calendario</button>
+          <button role="tab" data-view="year" aria-selected="false">Anno scolastico</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="grid" id="projects" aria-label="Elenco progetti"></section>
+      <div class="empty" id="empty" hidden>Nessun progetto trovato. Prova a rimuovere filtri o modifica la ricerca.</div>
+    </main>
+
+    <footer>
+      Branch <strong>site</strong> • Dominio: <a href="https://tdp.giordii.dev">tdp.giordii.dev</a>
+    </footer>
+  </div>
+
+  <script>
+    // Configurazione FEATURED: modifica l'array per cambiare lo slider
+    const FEATURED = ['sito', 'js-fund', 'htmlcss'];
+
+    // Dati progetti con anteprime, tag e data (YYYY-MM-DD)
+    const PROJECTS = [
+  { key: 'verifica', title: 'Esercizio Verifica', desc: 'Pagina di verifica HTML', href: 'html/es_x_verifica/index.html', thumb: 'html/es_x_verifica/img/leonardo.jpg', tags: ['HTML','Verifiche'], date: '2024-10-15' },
+      { key: 'htmlcss', title: 'HTML + CSS', desc: 'Esempi di base HTML/CSS', href: 'html/html_project/html_css.html', thumb: 'html/html_project/src/hq720.jpg', tags: ['HTML','CSS'], date: '2024-11-05' },
+      { key: 'sito', title: 'Sito Statico', desc: 'Progetto sito semplice', href: 'html/html_project/sito.html', thumb: 'html/html_project/src/sddefault.jpg', tags: ['HTML','CSS'], date: '2025-01-20' },
+  { key: 'ripasso', title: 'HTML Ripasso', desc: 'Ripasso con form base', href: 'html/html_ripasso/BaseForm.html', thumb: 'html/es_x_verifica/img/bg-header.jpg', tags: ['HTML'], date: '2025-09-26' },
+      { key: 'js-fund', title: 'JS Fundamentals', desc: 'Esempi base JavaScript', href: 'javascript/fundamentals/index.html', thumb: 'html/html_project/src/pac-36710_640.png', tags: ['JavaScript'], date: '2025-10-01' },
+      { key: 'tabeline', title: 'JS Tabeline', desc: 'Generatore di tabelline', href: 'javascript/fundamentals/tabeline.html', thumb: 'html/es_x_verifica/img/vitruviano.jfif', tags: ['JavaScript'], date: '2025-10-01' },
+    ];
+
+    // Utilità date
+    function parseISO(x){ const d = new Date(x+'T00:00:00'); return isNaN(d) ? null : d; }
+    function fmtDMY(d){ return d ? d.toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit', year:'numeric' }) : ''; }
+    function ymKey(d){ return d ? (d.getFullYear()+ '-' + String(d.getMonth()+1).padStart(2,'0')) : 's.d.'; }
+    function ymLabel(k){ if(k==='s.d.') return 'Senza data'; const [y,m]=k.split('-'); return new Date(Number(y), Number(m)-1, 1).toLocaleDateString('it-IT', { month:'long', year:'numeric' }); }
+    function schoolYear(d){ if(!d) return 'Senza data'; const y=d.getFullYear(), m=d.getMonth()+1; const s = m>=9 ? y : y-1; const e = (s+1).toString().slice(-2); return s + '/' + e; }
+
+    // Pre-elabora date e mappe
+    const byKey = new Map();
+    PROJECTS.forEach(p => { p._date = p.date ? parseISO(p.date) : null; byKey.set(p.key, p); });
+
+    // Costanti DOM
+    const $filters = document.getElementById('filters');
+    const $grid = document.getElementById('projects');
+    const $empty = document.getElementById('empty');
+    const $q = document.getElementById('q');
+    const $view = document.getElementById('viewSwitcher');
+
+    // Filtri tag dinamici
+    const ALL = 'Tutti';
+    const TAGS = [ALL, ...Array.from(new Set(PROJECTS.flatMap(p => p.tags))).sort()];
+    function chip(label){ const b=document.createElement('button'); b.type='button'; b.className='chip'; b.textContent=label; b.dataset.tag=label; return b; }
+    TAGS.forEach(t => $filters.appendChild(chip(t)));
+
+    // Slider featured
+    const slides = document.getElementById('slides');
+    const dots = document.getElementById('dots');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const featured = FEATURED.map(k => byKey.get(k)).filter(Boolean);
+    featured.forEach(p => {
+      const s = document.createElement('a'); s.href=p.href; s.className='slide'; s.setAttribute('aria-label', p.title);
+      const img = document.createElement('img'); img.src = p.thumb; img.alt = 'Anteprima di ' + p.title; s.appendChild(img);
+      const cap = document.createElement('div'); cap.className='caption';
+      const t = document.createElement('div'); t.className='t'; t.textContent = p.title; cap.appendChild(t);
+      const d = document.createElement('div'); d.className='d'; d.textContent = p.desc; cap.appendChild(d);
+      const btn = document.createElement('span'); btn.className='btn'; btn.textContent = 'Apri progetto →'; cap.appendChild(btn);
+      s.appendChild(cap); slides.appendChild(s);
+      const dot = document.createElement('button'); dots.appendChild(dot);
+    });
+    let idx=0, N=featured.length, timer;
+    function goTo(i){ if(!N) return; idx=(i+N)%N; slides.style.transform='translateX(' + (-idx*100) + '%)';
+      [...dots.children].forEach((d,j)=>d.classList.toggle('active', j===idx)); restart(); }
+    function prevFn(){ goTo(idx-1); }
+    function nextFn(){ goTo(idx+1); }
+    function restart(){ clearInterval(timer); timer=setInterval(nextFn, 5000); }
+    prev.addEventListener('click', prevFn); next.addEventListener('click', nextFn); goTo(0);
+
+    // Render: griglia
+    function renderGrid(list){
+      $grid.className='grid';
+      $grid.innerHTML='';
+      if(!list.length){ $empty.hidden=false; return; } $empty.hidden=true;
+      list.forEach(p => {
+        const a=document.createElement('a'); a.href=p.href; a.className='card'; a.setAttribute('aria-label', p.title);
+        const th=document.createElement('div'); th.className='thumb';
+        const pic=document.createElement('picture'); const img=document.createElement('img'); img.src=p.thumb; img.alt='Anteprima di ' + p.title; img.loading='lazy'; pic.appendChild(img); th.appendChild(pic);
+        const meta=document.createElement('div'); meta.className='meta';
+        const ti=document.createElement('div'); ti.className='title'; ti.textContent=p.title; meta.appendChild(ti);
+        const de=document.createElement('div'); de.className='desc'; de.textContent=p.desc + (p._date? ' • ' + fmtDMY(p._date):''); meta.appendChild(de);
+        const tl=document.createElement('div'); tl.className='taglist'; p.tags.forEach(t=>{ const s=document.createElement('span'); s.className='tag'; s.textContent=t; tl.appendChild(s); }); meta.appendChild(tl);
+        th.appendChild(meta); a.appendChild(th); $grid.appendChild(a);
+      });
+    }
+
+    // Render: calendario (gruppo per mese)
+    function renderCalendar(list){
+      $grid.className=''; $grid.innerHTML='';
+      if(!list.length){ $empty.hidden=false; return; } $empty.hidden=true;
+      // gruppi
+      const groups = new Map();
+      list.forEach(p=>{ const key = ymKey(p._date); if(!groups.has(key)) groups.set(key,[]); groups.get(key).push(p); });
+      const ordered = [...groups.entries()].sort((a,b)=> a[0]<b[0]?1:-1);
+      ordered.forEach(([k,arr])=>{
+        const g=document.createElement('section'); g.className='group';
+        const h=document.createElement('h3'); h.textContent=ymLabel(k); g.appendChild(h);
+        const listEl=document.createElement('div'); listEl.className='list';
+        arr.sort((a,b)=> (b._date?.getTime()||0)-(a._date?.getTime()||0)).forEach(p=>{
+          const row=document.createElement('a'); row.href=p.href; row.className='row';
+          const dt=document.createElement('div'); dt.className='date'; dt.textContent= p._date? fmtDMY(p._date): 's.d.'; row.appendChild(dt);
+          const name=document.createElement('div'); name.className='name'; name.textContent=p.title; row.appendChild(name);
+          const tg=document.createElement('div'); tg.className='tags'; p.tags.forEach(t=>{ const s=document.createElement('span'); s.className='tag'; s.textContent=t; tg.appendChild(s); }); row.appendChild(tg);
+          listEl.appendChild(row);
+        });
+        g.appendChild(listEl); $grid.appendChild(g);
+      });
+    }
+
+    // Render: anno scolastico (Set-Ago)
+    function renderYear(list){
+      $grid.className=''; $grid.innerHTML='';
+      if(!list.length){ $empty.hidden=false; return; } $empty.hidden=true;
+      const groups = new Map();
+      list.forEach(p=>{ const key = schoolYear(p._date); if(!groups.has(key)) groups.set(key,[]); groups.get(key).push(p); });
+      const ordered = [...groups.entries()].sort((a,b)=> a[0]<b[0]?1:-1);
+      ordered.forEach(([k,arr])=>{
+        const g=document.createElement('section'); g.className='group';
+        const h=document.createElement('h3'); h.textContent='Anno scolastico ' + k; g.appendChild(h);
+        const listEl=document.createElement('div'); listEl.className='list';
+        arr.sort((a,b)=> (b._date?.getTime()||0)-(a._date?.getTime()||0)).forEach(p=>{
+          const row=document.createElement('a'); row.href=p.href; row.className='row';
+          const dt=document.createElement('div'); dt.className='date'; dt.textContent= p._date? fmtDMY(p._date): 's.d.'; row.appendChild(dt);
+          const name=document.createElement('div'); name.className='name'; name.textContent=p.title; row.appendChild(name);
+          const tg=document.createElement('div'); tg.className='tags'; p.tags.forEach(t=>{ const s=document.createElement('span'); s.className='tag'; s.textContent=t; tg.appendChild(s); }); row.appendChild(tg);
+          listEl.appendChild(row);
+        });
+        g.appendChild(listEl); $grid.appendChild(g);
+      });
+    }
+
+    // Stato
+    const params = new URLSearchParams(location.search);
+    const state = {
+      tag: params.get('tag') || ALL,
+      q: params.get('q') || '',
+      view: params.get('view') || 'grid'
+    };
+    if(state.q) $q.value = state.q;
+    [...$view.querySelectorAll('button')].forEach(b=> b.classList.toggle('active', b.dataset.view===state.view));
+
+    function filterProjects(){
+      const text = state.q.trim().toLowerCase();
+      const tag = state.tag;
+      const arr = PROJECTS.slice().sort((a,b)=> (b._date?.getTime()||0) - (a._date?.getTime()||0));
+      return arr.filter(p => {
+        const hitTag = tag === ALL || p.tags.includes(tag);
+        if (!hitTag) return false;
+        if (!text) return true;
+        const hay = (p.title + ' ' + p.desc + ' ' + p.tags.join(' ')).toLowerCase();
+        return hay.includes(text);
+      });
+    }
+
+    function apply(){
+      const list = filterProjects();
+      const sp = new URLSearchParams(location.search);
+      if (state.q) sp.set('q', state.q); else sp.delete('q');
+      if (state.tag && state.tag !== ALL) sp.set('tag', state.tag); else sp.delete('tag');
+      if (state.view && state.view !== 'grid') sp.set('view', state.view); else sp.delete('view');
+      history.replaceState(null, '', location.pathname + (sp.toString() ? '?' + sp.toString() : ''));
+      document.querySelectorAll('.chip').forEach(el => el.classList.toggle('active', el.dataset.tag === state.tag));
+      if(state.view==='grid') renderGrid(list); else if(state.view==='calendar') renderCalendar(list); else renderYear(list);
+    }
+
+    // Eventi
+    $filters.addEventListener('click', (e)=>{ const btn=e.target.closest('.chip'); if(!btn) return; state.tag=btn.dataset.tag; apply(); });
+    let tId; function debounced(){ clearTimeout(tId); tId = setTimeout(apply, 120); }
+    $q.addEventListener('input', ()=>{ state.q = $q.value; debounced(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='/' && document.activeElement!==$q){ e.preventDefault(); $q.focus(); } });
+    $view.addEventListener('click', (e)=>{ const b=e.target.closest('button[data-view]'); if(!b) return; state.view=b.dataset.view; [...$view.querySelectorAll('button')].forEach(x=>x.classList.toggle('active', x===b)); apply(); });
+
+    // Redirect rapido ?p= e ?to=
+    const key = params.get('p'); const to = params.get('to'); const go = (url)=>{ window.location.replace(url); };
+    if (key) { const found = PROJECTS.find(p => p.key.toLowerCase() === key.toLowerCase()); if (found) go(found.href); }
+    else if (to) { try { const url = new URL(to, location.origin); if (url.origin === location.origin) go(url.href); } catch(e){} }
+
+    // Prima render
+    apply();
+  </script>
+</body>
+</html>
