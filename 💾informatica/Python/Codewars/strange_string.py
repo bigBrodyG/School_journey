@@ -1,1 +1,0 @@
-STRANGE_STRING = 'fooß'
